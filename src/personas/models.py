@@ -5,4 +5,4 @@ class Persona(models.Model):
   nombres = models.TextField()
   apellidos = models.TextField()
   edad = models.TextField()
-
+  email = models.EmailField(max_length = 254)
