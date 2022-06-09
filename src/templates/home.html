@@ -3,5 +3,8 @@
   <h1>Hola bloque</h1>
   {{request.user}}<br>
   {{request.user.is_authenticated}}<br>
-  {{ saludo}}
+  {{ saludo }}
+  {% for myItem in lista %}
+    <p>{{ myItem}}</p>
+  {% endfor %}
 {% endblock %}

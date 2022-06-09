@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 def myHomeView(request,*args, **kwargs):
@@ -7,5 +6,6 @@ def myHomeView(request,*args, **kwargs):
     print(args, kwargs)
     myContext = {
         'saludo' : 'hola',
+        'lista'  : [1,2,5,4],
     }
     return render(request,"home.html",myContext)
