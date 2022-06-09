@@ -5,6 +5,12 @@
   {{request.user.is_authenticated}}<br>
   {{ saludo }}
   {% for myItem in lista %}
-    <p>{{forloop.counter}} -- {{ myItem}}</p>
+    <p>{{forloop.counter}} -- {{ myItem}}
+    {% if myItem <= 4 %}
+      - El numero no califica
+    {% elif myItem == 5 %}
+      - Este número si califica
+    {% endif %}
+    </p>
   {% endfor %}
 {% endblock %}
