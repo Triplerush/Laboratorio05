@@ -5,6 +5,6 @@
   {{request.user.is_authenticated}}<br>
   {{ saludo }}
   {% for myItem in lista %}
-    <p>{{ myItem}}</p>
+    <p>{{forloop.counter}} -- {{ myItem}}</p>
   {% endfor %}
 {% endblock %}
