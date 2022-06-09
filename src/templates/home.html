@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <title></title>
-    <meta charset="UTF-8">
-    <!-- <link href='css/style.css' rel='stylesheet' type='text/css'>   -->
-  </head>
-
-  <body>
-    <h1>Hola con templates</h1>
-    {{request.user}}<br>
-    {{request.user.is_authenticated}}
-  </body>
-</html>
-
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Hola bloque</h1>
+  {{request.user}}<br>
+  {{request.user.is_authenticated}}
+{% endblock %}
