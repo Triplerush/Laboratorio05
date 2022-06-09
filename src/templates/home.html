@@ -2,5 +2,6 @@
 {% block content %}
   <h1>Hola bloque</h1>
   {{request.user}}<br>
-  {{request.user.is_authenticated}}
+  {{request.user.is_authenticated}}<br>
+  {{ saludo}}
 {% endblock %}

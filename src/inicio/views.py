@@ -5,4 +5,7 @@ from django.http import HttpResponse
 def myHomeView(request,*args, **kwargs):
     print(request.user)
     print(args, kwargs)
-    return render(request,"home.html",{})
+    myContext = {
+        'saludo' : 'hola',
+    }
+    return render(request,"home.html",myContext)
