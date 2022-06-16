@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from inicio.views import myHomeView, myAnotherHomeView
-from personas.views import personaTestView,personaCreateView
+from personas.views import personaTestView,personaCreateView,searchForHelp
 
 urlpatterns = [
     path('',myHomeView, name='Página de Inicio'),
     path('otraVista/',myAnotherHomeView, name='Página de Inicio'),
     path('admin/', admin.site.urls),
-    path('persona/',personaTestView,name='otro'),
-    path('agregar/',personaCreateView,name='otro'),
+    path('persona/',personaTestView,name='Datos persona'),
+    path('search/',searchForHelp,name='buscar'),
+    path('agregar/',personaCreateView,name='formulario persona'),
+    
 ]
