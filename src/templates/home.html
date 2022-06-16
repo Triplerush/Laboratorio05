@@ -3,10 +3,11 @@
   <h1>Hola bloque</h1>
   {{request.user}}<br>
   {{request.user.is_authenticated}}<br>
-  {{ saludo }}
+  {{ saludo|upper}}<br>
+  Random -> {{ lista|random }}
   <ul>
   {% for myItem in lista %}
-    <li>{{forloop.counter}}) {{ myItem}}
+    <li>{{forloop.counter}}) "{{ myItem|add:2}}"
     {% if myItem <= 4 %}
       * El numero no califica
     {% elif myItem == 5 %}

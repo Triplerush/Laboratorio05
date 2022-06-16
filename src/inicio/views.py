@@ -7,7 +7,7 @@ def myHomeView(request,*args, **kwargs):
     print(args, kwargs)
     myContext = {
         'saludo' : 'hola a todos',
-        'lista'  : [1,2,5,4],
+        'lista'  : [1,2,5,4,],
     }
     return render(request,"home.html",myContext)
 
