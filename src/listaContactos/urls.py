@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from inicio.views import myHomeView, myAnotherHomeView
+from personas.views import personaTestView
 
 urlpatterns = [
     path('',myHomeView, name='Página de Inicio'),
     path('otraVista/',myAnotherHomeView, name='Página de Inicio'),
     path('admin/', admin.site.urls),
+    path('persona/',personaTestView,name='otro'),
+
 ]
