@@ -24,10 +24,17 @@ def anotherPersonaCreateView(request):
   form = RawPersonForm()
   if request.method == "POST":
     form = RawPersonForm(request.POST)
+    if form.is_valid ():
+      print(form.cleaned_data)
+      Persona.objects.create(**form.cleaned_data)
+    else:
+      print(form.errors)
+
   context={
     'form':form,
   }
   return render(request,'personas/personasCreate.html',context)
+
 
 def searchForHelp(request):
   return render(request,'personas/search.html',{})
