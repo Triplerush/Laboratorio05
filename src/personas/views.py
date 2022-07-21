@@ -49,6 +49,12 @@ def anotherPersonaCreateView(request):
   }
   return render(request,'personas/personasCreate.html',context)
 
+def personasListView(request):
+  queryset = Persona.objects.all()
+  context = {
+    'list': queryset,
+  }
+  return render(request,'personas/personasLista.html',context)
 
 def searchForHelp(request):
   return render(request,'personas/search.html',{})
