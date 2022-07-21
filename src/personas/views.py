@@ -21,12 +21,13 @@ def personaCreateView(request):
   return render(request,'personas/personasCreate.html',context)
 
 def anotherPersonaCreateView(request):
-  form = RawPersonForm(request.POST)
+  form = RawPersonForm()
+  if request.method == "POST":
+    form = RawPersonForm(request.POST)
   context={
     'form':form,
   }
   return render(request,'personas/personasCreate.html',context)
 
-  
 def searchForHelp(request):
   return render(request,'personas/search.html',{})
