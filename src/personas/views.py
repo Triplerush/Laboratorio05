@@ -13,8 +13,10 @@ def personaTestView(request):
   return render(request,'personas/descripcion.html',context)
 
 def personaCreateView(request):
-  obj = Persona.objects.get(id = 2)
-  form = PersonaForm(request.POST or None, instance=obj)
+  initialValues = {
+    'nombres': 'Hola',
+  }
+  form = PersonaForm(request.POST or None, initial =initialValues)
   if form.is_valid():
     form.save()
     form = PersonaForm()
