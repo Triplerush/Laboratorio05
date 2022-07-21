@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for instance in list %}
+
+    <p> {{instance.id }} - {{ instance.nombres}}</p>
+
+{% endfor %}
+
+{%endblock%}

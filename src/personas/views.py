@@ -48,6 +48,16 @@ def anotherPersonaCreateView(request):
     'form':form,
   }
   return render(request,'personas/personasCreate.html',context)
+  
+def personasDeleteView(request, myId):
+  obj = get_object_or_404(Persona, id = myId)
+  if request.method == "POST":
+    print("Lo borro")
+    obj.delete ()
+  context = {
+    'objeto': obj
+  }
+  return render(request, 'personas/personasBorrar.html', context)
 
 def personasListView(request):
   queryset = Persona.objects.all()
