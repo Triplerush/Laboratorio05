@@ -8,6 +8,9 @@ from personas.views import (
     personasListView,
     personasDeleteView
     )
+from .views import (
+    PersonaListView
+)
 
 app_name = 'personas'
 urlpatterns = [
@@ -18,4 +21,6 @@ urlpatterns = [
     path('personas/<int:myId>/',personasShowObject,name='Datos persona'),
     path('personasList/',personasListView,name='Lista de personas'),
     path('borrar/<int:myId>/',personasDeleteView,name='Borrar persona'),
+    path('',PersonaListView.as_view(),name=' persona'),
+
 ]

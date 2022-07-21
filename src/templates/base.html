@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title></title>
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
     <meta charset="UTF-8">
     <!-- <link href='css/style.css' rel='stylesheet' type='text/css'>   -->
   </head>
@@ -9,10 +12,12 @@
   <body>
     {% include 'nav.html' %}
     <h1>Hola con templates</h1>
-    {% block content %}
+    {% block body %}
         Remplazeme
     {% endblock %}
     <h2>Pie de página</h2>
   </body>
 </html>
+
+
 
