@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import Persona
 from .forms import PersonaForm, RawPersonForm
 #Create your views here.
@@ -54,6 +54,7 @@ def personasDeleteView(request, myId):
   if request.method == "POST":
     print("Lo borro")
     obj.delete ()
+    return redirect('/')
   context = {
     'objeto': obj
   }
