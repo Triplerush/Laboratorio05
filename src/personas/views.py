@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from .models import Persona
 from .forms import PersonaForm, RawPersonForm
@@ -25,6 +26,13 @@ def personaCreateView(request):
       'form':form,
   }
   return render(request,'personas/personasCreate.html',context)
+
+def personasShowObject(request, myId):
+  obj = Persona.objects.get(id = myId)
+  context = {
+    'objeto': obj
+  }
+  return render(request,'personas/descripcion.html',context)
 
 def anotherPersonaCreateView(request):
   form = RawPersonForm()
